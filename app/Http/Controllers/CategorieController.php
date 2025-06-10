@@ -33,7 +33,7 @@ class CategorieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
          $categorie = Categorie::find($id); 
       if(!$categorie){
@@ -68,7 +68,7 @@ class CategorieController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
          $categorie = Categorie::find($id); 
       if(!$categorie){
