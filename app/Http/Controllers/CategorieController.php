@@ -22,7 +22,7 @@ class CategorieController extends Controller
     {
         $valid = $request->validate([
             'nom' => 'required|unique:categories,nom|max:255',
-            'description' => 'nullable|text'
+            'description' => 'nullable|string'
         ]);
 
         $categorie = Categorie::create($valid);
@@ -57,7 +57,7 @@ class CategorieController extends Controller
         }
       $valid = $request->validate([
             'nom' => 'required|max:255|unique:categories,nom,' .$categorie->id,
-            'description' => 'nullable|text'
+            'description' => 'nullable|string'
         ]);
 
         $categorie->update($valid);

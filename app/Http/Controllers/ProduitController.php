@@ -23,8 +23,8 @@ class ProduitController extends Controller
     {
          $valid = $request->validate([
             'nom' => 'required|unique:produits,nom|max:255',
-            'description' => 'nullable|text',
-            'image' => 'nullable|text',
+            'description' => 'nullable|string',
+            'image' => 'nullable|string',
             'prix' => 'numeric|min:0',
             'quantite' => 'integer|min:0',
             'taille' => 'nullable|string',
@@ -65,8 +65,8 @@ class ProduitController extends Controller
         }
       $valid = $request->validate([
             'nom' => 'required|max:255|unique:produits,nom,' .$produit->id,
-            'description' => 'nullable|text',
-            'image' => 'nullable|text',
+            'description' => 'nullable|string',
+            'image' => 'nullable|string',
             'prix' => 'numeric|min:0',
             'quantite' => 'integer|min:0',
             'taille' => 'nullable|string',
