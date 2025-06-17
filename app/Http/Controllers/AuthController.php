@@ -17,7 +17,7 @@ class AuthController extends Controller
             'mot_de_passe' => 'required',
             'telephone' => 'nullable|max:50',
             'adresse' => 'nullable|max:255',
-            'photo_profil' => 'nullable|text',
+            'photo_profil' => 'nullable|string',
             'role_id' => 'required|exists:roles,id'
         ]);
 
