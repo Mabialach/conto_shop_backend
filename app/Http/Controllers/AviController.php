@@ -35,7 +35,7 @@ class AviController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         $avi = Avi::with('user')->find($id); 
       if(!$avi){
@@ -51,7 +51,7 @@ class AviController extends Controller
      */
     public function update(Request $request, string $id)
     {
-         $avi = Avi::with('categorie')->find($id); 
+         $avi = Avi::with('user')->find($id); 
         if(!$avi){
         return response()->json([
             'message' => 'avis non trouvé'
